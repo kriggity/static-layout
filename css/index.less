@@ -1,0 +1,284 @@
+@greyA6: #a6a6a6;
+@red: #e50914;
+@red-light: #f40612;
+@maxWidth: 1100px;
+
+body {
+  background-color: #000;
+  margin: 0;
+  padding: 0;
+
+  & * {
+    font-family: "Open Sans", sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    color: #fff;
+  }
+
+  h1 {
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 55px;
+  }
+
+  h2 {
+    font-weight: 400;
+    font-size: 26px;
+  }
+
+  h3 {
+    font-size: 23px;
+    font-weight: 400;
+  }
+
+  p {
+    font-size: 20px;
+    font-weight: 400;
+  }
+
+  a {
+    &,
+    &:visited {
+      text-decoration: none;
+    }
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+
+  button {
+    border: 1px solid @red;
+    background-color: @red;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 16px;
+    padding: 8px 16px;
+    border-radius: 2px;
+    font-size: 20px;
+
+    &:hover,
+    &:focus {
+      border: 1px solid @red-light;
+      background-color: @red-light;
+      cursor: pointer;
+    }
+
+    &.white {
+      background-color: transparent;
+      border-color: #fff;
+
+      &:hover,
+      &focus {
+        color: @greyA6;
+        border-color: @greyA6;
+      }
+    }
+  }
+  .wrapper {
+    max-width: @maxWidth;
+    margin: 0 auto;
+  }
+  header {
+    background-image: url("../images/hero.jpg");
+    border-bottom: 8px solid #222;
+    .top {
+      background-color: rgba(0, 0, 0, 0.333);
+      position: relative;
+      #logo {
+        &,
+        img {
+          width: 108px;
+          height: 40px;
+        }
+      }
+      button {
+        font-size: 1rem;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+      }
+    }
+  }
+
+  main {
+    section {
+      border-bottom: 8px solid #222;
+      width: 100%;
+
+      .wrapper {
+        .grid-container {
+          display: inline-grid;
+          grid-template-columns: 50%;
+        }
+      }
+
+      &#faq {
+        h1,
+        h2,
+        h3 {
+          text-align: center;
+        }
+
+        .faq-list {
+          width: 75%;
+          margin: 2em auto;
+
+          &,
+          .faq-list-item {
+            list-style: none;
+          }
+
+          .faq-list-item {
+            margin: 0 0 8px 0;
+
+            .faq-question,
+            .faq-answer {
+              background-color: #303030;
+            }
+
+            .faq-question {
+              padding: 0.8em 2.2em 0.8em 1.2em;
+              font-size: 18px;
+              text-transform: initial;
+              margin-bottom: 1px;
+              font-weight: 400;
+              position: relative;
+              width: 100%;
+              border: 0;
+              display: block;
+              text-align: left;
+
+              &:after {
+                content: "+";
+                font-size: 40px;
+                line-height: 0;
+                font-weight: 100;
+                margin: 0;
+                padding: 0;
+                position: absolute;
+                right: 20px;
+                top: 26px;
+                height: auto;
+              }
+            }
+
+            .faq-answer {
+              padding: 20px;
+
+              p {
+                margin: 0;
+                padding: 0;
+                margin-bottom: 1em;
+
+                &:last-child {
+                  margin-bottom: 0;
+                }
+              }
+            }
+            &.closed {
+              .faq-answer {
+                display: none;
+              }
+            }
+            &.open {
+              .faq-question {
+                &:after {
+                  -moz-transform: rotate(45deg);
+                  -webkit-transform: rotate(45deg);
+                  -o-transform: rotate(45deg);
+                  -ms-transform: rotate(45deg);
+                  transform: rotate(45deg);
+                }
+              }
+
+              .faq-answer {
+                display: block;
+              }
+            }
+          }
+        }
+        form {
+          text-align: center;
+          h3 {
+            max-width: 450px;
+            margin: 0 auto;
+          }
+          .wrapperOuter {
+            max-width:500px;
+            margin:10px auto;
+            position: relative;
+            .wrapperInner {
+              label {
+                position: relative;
+                color:@greyA6;
+                input {
+                  position: relative;
+                  height: 48px;
+                  padding: 10px 10px 0;
+                  width: 100%;
+                }
+              }
+            }
+          }
+          button {
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    color: @greyA6;
+    max-width: @maxWidth;
+    margin: 0 auto;
+    padding: 45px 70px;
+    a {
+      &,
+      &:hover,
+      &:focus,
+      &:visited {
+        color: @greyA6;
+      }
+
+      font-size: 13px;
+    }
+
+    .footer-top {
+      color: @greyA6;
+      &,
+      a {
+        font-size: 16px;
+      }
+    }
+
+    ul {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: flex-start;
+      align-items: baseline;
+
+      &,
+      li {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      li {
+        flex: 0 1 23.5%;
+        min-width: 100px;
+        padding-right: 12px;
+        padding-bottom: 16px;
+      }
+    }
+  }
+}

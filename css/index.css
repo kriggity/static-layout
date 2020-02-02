@@ -1,0 +1,228 @@
+body {
+  background-color: #000;
+  margin: 0;
+  padding: 0;
+}
+body * {
+  font-family: "Open Sans", sans-serif;
+}
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6,
+body p {
+  color: #fff;
+}
+body h1 {
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 55px;
+}
+body h2 {
+  font-weight: 400;
+  font-size: 26px;
+}
+body h3 {
+  font-size: 23px;
+  font-weight: 400;
+}
+body p {
+  font-size: 20px;
+  font-weight: 400;
+}
+body a,
+body a:visited {
+  text-decoration: none;
+}
+body a:hover,
+body a:focus {
+  text-decoration: underline;
+}
+body button {
+  border: 1px solid #e50914;
+  background-color: #e50914;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 16px;
+  padding: 8px 16px;
+  border-radius: 2px;
+  font-size: 20px;
+}
+body button:hover,
+body button:focus {
+  border: 1px solid #f40612;
+  background-color: #f40612;
+  cursor: pointer;
+}
+body button.white {
+  background-color: transparent;
+  border-color: #fff;
+}
+body button.white:hover,
+body button.whitefocus {
+  color: #a6a6a6;
+  border-color: #a6a6a6;
+}
+body .wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+body header {
+  background-image: url("../images/hero.jpg");
+  border-bottom: 8px solid #222;
+}
+body header .top {
+  background-color: rgba(0, 0, 0, 0.333);
+  position: relative;
+}
+body header .top #logo,
+body header .top #logo img {
+  width: 108px;
+  height: 40px;
+}
+body header .top button {
+  font-size: 1rem;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+body main section {
+  border-bottom: 8px solid #222;
+  width: 100%;
+}
+body main section .wrapper .grid-container {
+  display: inline-grid;
+  grid-template-columns: 50%;
+}
+body main section#faq h1,
+body main section#faq h2,
+body main section#faq h3 {
+  text-align: center;
+}
+body main section#faq .faq-list {
+  width: 75%;
+  margin: 2em auto;
+}
+body main section#faq .faq-list,
+body main section#faq .faq-list .faq-list-item {
+  list-style: none;
+}
+body main section#faq .faq-list .faq-list-item {
+  margin: 0 0 8px 0;
+}
+body main section#faq .faq-list .faq-list-item .faq-question,
+body main section#faq .faq-list .faq-list-item .faq-answer {
+  background-color: #303030;
+}
+body main section#faq .faq-list .faq-list-item .faq-question {
+  padding: 0.8em 2.2em 0.8em 1.2em;
+  font-size: 18px;
+  text-transform: initial;
+  margin-bottom: 1px;
+  font-weight: 400;
+  position: relative;
+  width: 100%;
+  border: 0;
+  display: block;
+  text-align: left;
+}
+body main section#faq .faq-list .faq-list-item .faq-question:after {
+  content: "+";
+  font-size: 40px;
+  line-height: 0;
+  font-weight: 100;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  right: 20px;
+  top: 26px;
+  height: auto;
+}
+body main section#faq .faq-list .faq-list-item .faq-answer {
+  padding: 20px;
+}
+body main section#faq .faq-list .faq-list-item .faq-answer p {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 1em;
+}
+body main section#faq .faq-list .faq-list-item .faq-answer p:last-child {
+  margin-bottom: 0;
+}
+body main section#faq .faq-list .faq-list-item.closed .faq-answer {
+  display: none;
+}
+body main section#faq .faq-list .faq-list-item.open .faq-question:after {
+  -moz-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+body main section#faq .faq-list .faq-list-item.open .faq-answer {
+  display: block;
+}
+body main section#faq form {
+  text-align: center;
+}
+body main section#faq form h3 {
+  max-width: 450px;
+  margin: 0 auto;
+}
+body main section#faq form .wrapperOuter {
+  max-width: 500px;
+  margin: 10px auto;
+  position: relative;
+}
+body main section#faq form .wrapperOuter .wrapperInner label {
+  position: relative;
+  color: #a6a6a6;
+}
+body main section#faq form .wrapperOuter .wrapperInner label input {
+  position: relative;
+  height: 48px;
+  padding: 10px 10px 0;
+  width: 100%;
+}
+body footer {
+  color: #a6a6a6;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 45px 70px;
+}
+body footer a {
+  font-size: 13px;
+}
+body footer a,
+body footer a:hover,
+body footer a:focus,
+body footer a:visited {
+  color: #a6a6a6;
+}
+body footer .footer-top {
+  color: #a6a6a6;
+}
+body footer .footer-top,
+body footer .footer-top a {
+  font-size: 16px;
+}
+body footer ul {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: baseline;
+}
+body footer ul,
+body footer ul li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+body footer ul li {
+  flex: 0 1 23.5%;
+  min-width: 100px;
+  padding-right: 12px;
+  padding-bottom: 16px;
+}
