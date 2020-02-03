@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <link href="./images/favicon.ico" rel="icon" type="image/x-icon" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -15,25 +16,31 @@
 
 <body>
   <header>
-    <div class="top">
-      <a href="#" id="logo"><img src="./images/logo.png" alt="Netflix" /></a>
-      <button id="sign-in">Sign In</button>
-    </div>
-    <div class="wrapper">
-      <h1>Unlimited movies, TV shows, and more.</h1>
-      <h2>Watch anywhere. Cancel anytime.</h2>
-      <form>
-        <label for="email-address01">Email Address</label>
-        <input type="text" name="email-address01" />
-        <button>Try 30 Days Free ></button>
-      </form>
-      <h3>
-        Ready to watch? Enter your email to create or access your account
-      </h3>
+    <div class="underlay">
+      <div class="top">
+        <a href="#" id="logo"><img src="./images/logo.png" alt="Netflix" /></a>
+        <button id="sign-in">Sign In</button>
+      </div>
+      <div class="wrapper">
+        <h1>Unlimited movies, TV shows, and more.</h1>
+        <h2>Watch anywhere. Cancel anytime.</h2>
+        <form>
+          <div class="wrapperOuter">
+            <div class="wrapperInner">
+              <input type="text" name="emailAddress"/>
+              <label for="emailAddress">Email Address</label>  
+            </div>
+          </div>
+          <button>Try 30 Days Free</button>
+        </form>
+        <h3>
+          Ready to watch? Enter your email to create or access your account
+        </h3>
+      </div>
     </div>
   </header>
   <main>
-    <section>
+    <section id="enjoy">
       <div class="wrapper">
         <div class="grid-container">
           <div class="grid-item">
@@ -42,32 +49,42 @@
               Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV,
               Blu-ray players, and more.
             </h2>
-            <button class="white">Try 30 Days Free &#10093;</button>
+            <button class="white">Try 30 Days Free</button>
           </div class="grid-item">
           <div class="grid-item">
             <img src="./images/tv.png" />
-            <video>
+            <video autoplay muted loop>
               <source src="./video/video-tv-0819.m4v" type="video/mp4" />
             </video>
           </div>
         </div>
       </div>
     </section>
-    <section>
+    <section id="download">
       <div class="wrapper">
         <div class="grid-container">
           <div class="grid-item">
-            <h1>Download your shows to watch on the go.</h1>
-            <h2>Save your data and watch all your favorites offline.</h2>
-            <button class="white">Try 30 Days Free &#10093;</button>
-          </div class="grid-item">
-          <div class="grid-item">
+            <div class="console">
+              <span class="img console-item">
+                <img src="./images/boxshot.png" />
+              </span>
+              <span class="text console-item">
+                <p class="title">Stranger Things</p>
+                <p class="downloading">Downloading...</p>
+              </span>
+              <span class="arrow console-item">&#10515;</span>
+            </div>
             <img src="./images/mobile-0819.jpg" />
           </div>
+          <div class="grid-item">
+            <h1>Download your shows to watch on the go.</h1>
+            <h2>Save your data and watch all your favorites offline.</h2>
+            <button class="white">Try 30 Days Free</button>
+          </div class="grid-item">
         </div>
       </div>
     </section>
-    <section>
+    <section id="watch">
       <div class="wrapper">
         <div class="grid-container">
           <div class="grid-item">
@@ -76,11 +93,11 @@
               Stream unlimited movies and TV shows on your phone, tablet,
               laptop, and TV without paying more.
             </h2>
-            <button class="white">Try 30 Days Free &#10093;</button>
+            <button class="white">Try 30 Days Free</button>
           </div>
           <div class="grid-item">
             <img src="./images/device-pile.png" />
-            <video>
+            <video autoplay muted loop>
               <source src="./video/video-devices.m4v" type="video/mp4" />
             </video>
           </div>
@@ -168,10 +185,11 @@
           </h3>
           <div class="wrapperOuter">
             <div class="wrapperInner">
-              <label for="emailAddress"><input type="text" name="emailAddress"/></label>              
+              <input type="text" name="emailAddress"/>
+              <label for="emailAddress">Email Address</label>  
             </div>
           </div>
-          <button>Try 30 Days Free ></button>
+          <button>Try 30 Days Free</button>
         </form>
       </div>
     </section>
@@ -198,12 +216,15 @@
       <li><a href="#">Legal Notices</a></li>
       <li><a href="#">Netflix Originals</a></li>
     </ul>
-    <select>
-      <option selected="" value="/">English</option>
-      <option value="/us-es/">Español</option>
-    </select>
+    <form>
+      <div class="wrapperOuter">
+        <select>
+          <option selected="" value="/">English</option>
+          <option value="/us-es/">Español</option>
+        </select>
+      </div>
+    </form>
   </footer>
 </body>
 <script src="./js/index.js"></script>
-
 </html>

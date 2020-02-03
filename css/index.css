@@ -5,6 +5,7 @@ body {
 }
 body * {
   font-family: "Open Sans", sans-serif;
+  outline: none;
 }
 body h1,
 body h2,
@@ -18,14 +19,15 @@ body p {
 body h1 {
   font-weight: 700;
   font-size: 50px;
-  line-height: 55px;
+  line-height: 1.1;
+  margin: 0 0 0.4rem;
 }
 body h2 {
   font-weight: 400;
   font-size: 26px;
 }
 body h3 {
-  font-size: 23px;
+  font-size: 1.2rem;
   font-weight: 400;
 }
 body p {
@@ -47,8 +49,24 @@ body button {
   text-transform: uppercase;
   font-size: 16px;
   padding: 8px 16px;
+  padding-right: 32px;
   border-radius: 2px;
   font-size: 20px;
+  position: relative;
+}
+body button:after {
+  content: "\203a";
+  color: #fff;
+  display: block;
+  font-weight: 300;
+  position: absolute;
+  top: 50%;
+  right: 14px;
+  margin: 0;
+  margin-top: -4px;
+  padding: 0;
+  transform: translateY(-50%) scale(2);
+  line-height: 1;
 }
 body button:hover,
 body button:focus {
@@ -73,41 +91,198 @@ body header {
   background-image: url("../images/hero.jpg");
   border-bottom: 8px solid #222;
 }
-body header .top {
-  background-color: rgba(0, 0, 0, 0.333);
-  position: relative;
+body header .underlay {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+33,000000+66,000000+100&0.85+0,0.33+33,0.33+66,0.85+100 */
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.33) 33%, rgba(0, 0, 0, 0.33) 66%, rgba(0, 0, 0, 0.85) 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.33) 33%, rgba(0, 0, 0, 0.33) 66%, rgba(0, 0, 0, 0.85) 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.33) 33%, rgba(0, 0, 0, 0.33) 66%, rgba(0, 0, 0, 0.85) 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d9000000', endColorstr='#d9000000', GradientType=0);
+  /* IE6-9 */
+  padding-bottom: 75px;
 }
-body header .top #logo,
-body header .top #logo img {
+body header .underlay .top {
+  position: relative;
+  height: 4.5rem;
+  padding-top: 20px;
+}
+body header .underlay .top #logo,
+body header .underlay .top button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+body header .underlay .top #logo {
+  left: 57px;
+}
+body header .underlay .top #logo,
+body header .underlay .top #logo img {
   width: 108px;
   height: 40px;
 }
-body header .top button {
+body header .underlay .top button {
   font-size: 1rem;
+  right: 57px;
+}
+body header .underlay .wrapper {
+  text-align: center;
+  padding: 50px 5%;
+}
+body header .underlay .wrapper h1 {
+  max-width: 640px;
+  margin: 0 auto;
+  padding-top: 75px;
+}
+body header .underlay .wrapper form {
+  text-align: center;
+}
+body header .underlay .wrapper form .wrapperOuter {
+  max-width: 500px;
+  margin: 10px auto;
+  position: relative;
+}
+body header .underlay .wrapper form .wrapperOuter .wrapperInner label {
   position: absolute;
-  top: 0px;
-  right: 0px;
+  color: #a6a6a6;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10px;
+  z-index: 1;
+  font-size: 16px;
+  font-weight: 400;
+}
+body header .underlay .wrapper form .wrapperOuter .wrapperInner input {
+  position: relative;
+  height: 48px;
+  padding: 10px 10px 0;
+  width: 100%;
+  border: 1px solid #8c8c8c;
+  font-size: 16px;
+}
+body header .underlay .wrapper form .wrapperOuter .wrapperInner input:focus + label {
+  top: 6px;
+  transform: none;
+  font-size: 13px;
+  font-weight: 700;
 }
 body main section {
   border-bottom: 8px solid #222;
   width: 100%;
 }
 body main section .wrapper .grid-container {
+  display: grid;
+  grid-template-columns: 50% auto;
+  grid-gap: 3rem;
+  margin: 50px 5%;
+}
+body main section .wrapper .grid-container .grid-item {
+  position: relative;
+  overflow: hidden;
+}
+body main section .wrapper .grid-container .grid-item > img,
+body main section .wrapper .grid-container .grid-item video {
+  position: absolute;
+  max-width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
+body main section .wrapper .grid-container .grid-item img {
+  z-index: 1;
+}
+body main section .wrapper .grid-container .grid-item video {
+  z-index: 0;
+}
+body main section#enjoy .wrapper .grid-container .grid-item img {
+  width: 100%;
+}
+body main section#enjoy .wrapper .grid-container .grid-item video {
+  width: 74%;
+  margin-left: -1%;
+  margin-top: -2%;
+}
+body main section#download .wrapper .grid-container .grid-item .console {
   display: inline-grid;
-  grid-template-columns: 50%;
+  grid-template-columns: 20% auto 12px;
+  column-gap: 0.65em;
+  align-items: center;
+  position: absolute;
+  width: 60%;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  border-radius: 0.75em;
+  box-shadow: 0 0 2em 0 #000000;
+  bottom: 10%;
+  z-index: 999;
+  background: #000;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.65em;
+}
+body main section#download .wrapper .grid-container .grid-item .console .console-item {
+  vertical-align: middle;
+}
+body main section#download .wrapper .grid-container .grid-item .console .img {
+  margin-right: 0.5em;
+}
+body main section#download .wrapper .grid-container .grid-item .console .img img {
+  position: unset;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+body main section#download .wrapper .grid-container .grid-item .console .text {
+  margin-right: 0.5em;
+}
+body main section#download .wrapper .grid-container .grid-item .console .text * {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+body main section#download .wrapper .grid-container .grid-item .console .text .title {
+  font-size: 0.9em;
+  margin-bottom: 0.333em;
+}
+body main section#download .wrapper .grid-container .grid-item .console .text .downloading {
+  font-size: 0.75em;
+  color: #0071eb;
+}
+body main section#download .wrapper .grid-container .grid-item .console .arrow {
+  color: #fff;
+  font-size: 1.666em;
+}
+body main section#download .wrapper .grid-container .grid-item img {
+  width: 100%;
+  padding-bottom: 10%;
+}
+body main section#watch .wrapper .grid-container .grid-item img {
+  max-height: 100%;
+}
+body main section#watch .wrapper .grid-container .grid-item video {
+  width: 53%;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+}
+body main section#faq {
+  padding-bottom: 5%;
+  padding-top: 5%;
 }
 body main section#faq h1,
 body main section#faq h2,
 body main section#faq h3 {
   text-align: center;
 }
-body main section#faq .faq-list {
-  width: 75%;
-  margin: 2em auto;
-}
 body main section#faq .faq-list,
 body main section#faq .faq-list .faq-list-item {
   list-style: none;
+  margin: 0;
+  padding: 0;
+}
+body main section#faq .faq-list {
+  width: 75%;
+  margin: 2em auto;
 }
 body main section#faq .faq-list .faq-list-item {
   margin: 0 0 8px 0;
@@ -139,6 +314,7 @@ body main section#faq .faq-list .faq-list-item .faq-question:after {
   right: 20px;
   top: 26px;
   height: auto;
+  transform: scale(1);
 }
 body main section#faq .faq-list .faq-list-item .faq-answer {
   padding: 20px;
@@ -177,14 +353,28 @@ body main section#faq form .wrapperOuter {
   position: relative;
 }
 body main section#faq form .wrapperOuter .wrapperInner label {
-  position: relative;
+  position: absolute;
   color: #a6a6a6;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10px;
+  z-index: 1;
+  font-size: 16px;
+  font-weight: 400;
 }
-body main section#faq form .wrapperOuter .wrapperInner label input {
+body main section#faq form .wrapperOuter .wrapperInner input {
   position: relative;
   height: 48px;
   padding: 10px 10px 0;
   width: 100%;
+  border: 1px solid #8c8c8c;
+  font-size: 16px;
+}
+body main section#faq form .wrapperOuter .wrapperInner input:focus + label {
+  top: 6px;
+  transform: none;
+  font-size: 13px;
+  font-weight: 700;
 }
 body footer {
   color: #a6a6a6;
@@ -203,6 +393,8 @@ body footer a:visited {
 }
 body footer .footer-top {
   color: #a6a6a6;
+  padding: 0;
+  margin: 0 0 30px;
 }
 body footer .footer-top,
 body footer .footer-top a {
@@ -221,8 +413,56 @@ body footer ul li {
   padding: 0;
 }
 body footer ul li {
-  flex: 0 1 23.5%;
+  flex: 0 1 23%;
   min-width: 100px;
   padding-right: 12px;
   padding-bottom: 16px;
+}
+body footer form .wrapperOuter {
+  display: block;
+  position: relative;
+  margin-top: 20px;
+}
+body footer form .wrapperOuter select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-overflow: "";
+  background-color: #000000;
+  background-image: none;
+  border: 1px solid #333333;
+  color: #999;
+  font-size: 16px;
+  text-indent: 0;
+  padding: 12px;
+  padding-right: 26px;
+  padding-left: 50px;
+  line-height: 1.7;
+  border-radius: 2px;
+}
+body footer form .wrapperOuter select:hover,
+body footer form .wrapperOuter select:focus {
+  cursor: pointer;
+}
+body footer form .wrapperOuter:before {
+  content: "";
+  display: block;
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 19px;
+  background: url(../images/globe.png);
+  background-size: 100%;
+}
+body footer form .wrapperOuter:after {
+  content: "\25bc";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 115px;
+  color: #999;
+  font-size: 9px;
+  transform: translateY(-50%) scaleX(1.25);
+  cursor: pointer;
 }
